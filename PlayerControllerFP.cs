@@ -14,7 +14,6 @@ using UnityEngine;
         [SerializeField] [Range(0f, .5f)] float moveSmoothTime = .3f;
         [SerializeField] [Range(0f, .5f)] float mouseSmoothTime = .03f;
 
-        public AnimatorHandler animatorHandler;
         public Animator animator;
 
 
@@ -89,7 +88,7 @@ using UnityEngine;
 
            
         }
-        // trigger test for animator on a very quick movement in direction that is pushed on movement
+        // trigger test for animator. Quick movement in direction of movement
         private void Dash()
         {
             if (Input.GetButtonDown("Fire2")) 
@@ -112,7 +111,7 @@ using UnityEngine;
             }
         }
 
-        // bool test for animatior to make Player mode run in a straight line. Error it also goes back
+        // bool test for animatior. Make player run faster in a straight line. Error it also goes back
         private void Sprint() 
         {
             if (Input.GetButton("Fire2"))
@@ -139,8 +138,5 @@ using UnityEngine;
             {
                 animator.SetBool("Sprint", false);
             }
-        }
-      
-       
-
-        }
+        }     
+    }
