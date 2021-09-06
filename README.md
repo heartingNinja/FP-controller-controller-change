@@ -9,4 +9,4 @@ PlayerChange.cs goes to an empty Game Object to change PlayerMode
 
 
 
-PlayerControllerFP.cs is for movemnt and look. It works with a Charcter Controller
+PlayerControllerFP.cs is for movemnt and look in first person. It works with a Charcter Controller
