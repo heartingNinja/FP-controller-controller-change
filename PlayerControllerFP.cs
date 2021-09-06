@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NF
-{
-
     // basic controller to work with animations. Still need to add jump
     public class PlayerControllerFP : MonoBehaviour
     {
@@ -147,6 +144,3 @@ namespace NF
        
 
         }
-    }
-
-
