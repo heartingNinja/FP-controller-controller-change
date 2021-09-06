@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// This still needs some work.  
+// This still needs some work. Add this to an Empty Game Object in the Inspector.
 public class PlayerChange : MonoBehaviour
 {
     public GameObject thirdPerson; // Add your third person character in inspector
     public GameObject firstPerson; // Add your first person character in inspector
-                                   // Add your first person character in inspector if have more
+                                   // Add your new character in inspector, if have more
 
     public int playerMode;
 
     private void Start()
     {
-        // Choose what character to start in. One true, can have more than one false
+        // Choose what mode to start in. One true, can have more than one false
         thirdPerson.SetActive(false);
         firstPerson.SetActive(true);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Player"))  // Set "Player" in Edit >> Project Settings >> Input Manager. Increase size by typeing in a bigger number than shown, and add "Player" button to the name of the new button. Will need to add more if's for more than 3 characters
+        if (Input.GetButtonDown("PlayerMode"))  // Set "PlayerMode" in Edit >> Project Settings >> Input Manager. Increase size by typeing in a bigger number than shown, and add "PlayerMode" button to the name of the new button. Will need to add more if's for more than 3 characters
         {
 
             if (playerMode == 1)
