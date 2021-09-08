@@ -43,7 +43,7 @@ public class PlayerChange : MonoBehaviour
 
     IEnumerator PlayerMode()
     {
-        yield return new WaitForSeconds(.01f); // add more if (playerMode == #) for more modes modes. Only one true
+        yield return new WaitForSeconds(.01f); // add more if (playerMode == #) for more modes. Only one true
         if (playerMode == 0)
         {
             thirdPerson.SetActive(true);
