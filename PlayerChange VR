@@ -35,8 +35,8 @@ public class PlayerChange : MonoBehaviour
             else
             {
                 playerMode += 1;
-                VrCamera.transform.position = first.transform.position; // makes GameObject appear at correct position
-                VrCamera.transform.rotation = first.transform.rotation; // makes GameObject appear at correct rotation
+                VR.transform.position = first.transform.position; // makes GameObject appear at correct position
+                VR.transform.rotation = first.transform.rotation; // makes GameObject appear at correct rotation
             }
 
 
