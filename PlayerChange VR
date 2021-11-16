@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+// This still needs some work. Add this to an Empty Game Object in the Inspector.
+public class PlayerChange : MonoBehaviour
+{
+    public GameObject FirstPerson; // Add your third person character in inspector
+    public GameObject VR; // Add your first person character in inspector
+                                   // Add your new character in inspector, if have more
+
+    public Camera VrCamera;
+    public Camera first;
+
+    public int playerMode;
+
+    private void Start()
+    {
+        // Choose what mode to start in. One true, can have more than one false
+        FirstPerson.SetActive(false);
+        VR.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("PlayerMode"))  // Set "PlayerMode" in Edit >> Project Settings >> Input Manager. Increase size by typeing in a bigger number than shown, and add "PlayerMode" button to the name of the new button. Will need to add more if's for more than 3 characters
+        {
+
+            if (playerMode == 1)
+            {
+                playerMode = 0;
+                first.transform.position = VrCamera.transform.position; // makes GameObject appear at correct position
+                first.transform.rotation = VrCamera.transform.rotation; // makes GameObject appear at correct rotation
+            }
+            else
+            {
+                playerMode += 1;
+                VrCamera.transform.position = first.transform.position; // makes GameObject appear at correct position
+                VrCamera.transform.rotation = first.transform.rotation; // makes GameObject appear at correct rotation
+            }
+
+
+            StartCoroutine(PlayerMode());
+        }
+    }
+
+    IEnumerator PlayerMode()
+    {
+        yield return new WaitForSeconds(.01f); // add more if (playerMode == #) for more modes. Only one true
+        if (playerMode == 0)
+        {
+            FirstPerson.SetActive(true);
+            VR.SetActive(false);
+
+        }
+        if (playerMode == 1)
+        {
+            VR.SetActive(true);
+            FirstPerson.SetActive(false);
+        }
+    }
+}
