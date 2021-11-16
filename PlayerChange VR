@@ -9,8 +9,10 @@ public class PlayerChange : MonoBehaviour
     public GameObject VR; // Add your first person character in inspector
                                    // Add your new character in inspector, if have more
 
-    public Camera VrCamera;
+   // public Camera VrCamera;
     public Camera first;
+    public GameObject VrBody;
+    
 
     public int playerMode;
 
@@ -29,14 +31,14 @@ public class PlayerChange : MonoBehaviour
             if (playerMode == 1)
             {
                 playerMode = 0;
-                first.transform.position = VrCamera.transform.position; // makes GameObject appear at correct position
-                first.transform.rotation = VrCamera.transform.rotation; // makes GameObject appear at correct rotation
+                first.transform.position = VrBody.transform.position; // makes GameObject appear at correct position
+                first.transform.rotation = VrBody.transform.rotation; // makes GameObject appear at correct rotation
             }
             else
             {
                 playerMode += 1;
-                VR.transform.position = first.transform.position; // makes GameObject appear at correct position
-                VR.transform.rotation = first.transform.rotation; // makes GameObject appear at correct rotation
+                VrBody.transform.position = first.transform.position; // makes GameObject appear at correct position
+                VrBody.transform.rotation = first.transform.rotation; // makes GameObject appear at correct rotation
             }
 
 
